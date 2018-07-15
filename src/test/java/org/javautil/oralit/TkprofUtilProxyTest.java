@@ -11,7 +11,6 @@ import javax.sql.DataSource;
 
 import org.javautil.oralit.dbstats.services.oracle.TkprofUtilProxy;
 import org.javautil.oralit.instrumentation.DbStats;
-import org.javautil.oralit.oracle.HardwiredDataSource;
 import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -28,7 +27,7 @@ The numbers are: 6 - number, 9 - char, 12 - date.
 purging
 https://docs.oracle.com/database/121/ARPLS/d_pipe.htm#ARPLS67417
  */
-	private DataSource dataSource = HardwiredDataSource.getDataSource();
+	private DataSource dataSource = DsLookup.getInstance().getDataSource();
 	private Logger logger = LoggerFactory.getLogger(getClass());
 
 	DbStats dbstats;

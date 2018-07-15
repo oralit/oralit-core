@@ -26,24 +26,24 @@ import org.slf4j.LoggerFactory;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class PipePushTest  {
-	String listener;
-	String pushText = null;
-	private Logger logger = LoggerFactory.getLogger(getClass());
+public class PipePushTest {
+    String listener;
+    String pushText = null;
+    private Logger logger = LoggerFactory.getLogger(getClass());
 
-	@Before
-	public void before() throws IOException, URISyntaxException {
-		String resourceName = "/plsql/push_tkprof_request_to_pipe.sql";
-		URI resourceURI = getClass().getResource(resourceName).toURI();
-		logger.debug("resourceUri:" + resourceURI.toString());
-		pushText = new String(Files.readAllBytes(Paths.get(getClass().getResource(resourceName).toURI())));
-		assertThat(pushText).isNotNull();
-		logger.debug("push Text: " + pushText);
-		
-	}
-	
-	@Test
-	public void nullTest() {
-		
-	}
+    @Before
+    public void before() throws IOException, URISyntaxException {
+        String resourceName = "/plsql/push_tkprof_request_to_pipe.sql";
+        URI resourceURI = getClass().getResource(resourceName).toURI();
+        logger.debug("resourceUri:" + resourceURI.toString());
+        pushText = new String(Files.readAllBytes(Paths.get(getClass().getResource(resourceName).toURI())));
+        assertThat(pushText).isNotNull();
+        logger.debug("push Text: " + pushText);
+
+    }
+
+    @Test
+    public void nullTest() {
+
+    }
 }
