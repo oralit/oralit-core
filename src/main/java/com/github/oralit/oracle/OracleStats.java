@@ -7,10 +7,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Date;
 
-import org.javautil.instrumentation.DbStats;
+import com.github.oralit.instrumentation.DbStats;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 
 
 
@@ -22,7 +21,6 @@ import org.springframework.stereotype.Component;
  *         https://docs.oracle.com/cd/B28359_01/server.111/b28310/diag006.htm#ADMIN12484
  *
  */
-@Component
 public class OracleStats extends AbstractOracleStats implements DbStats {
 
 	final static Logger log = LoggerFactory.getLogger(OracleStats.class);
@@ -37,8 +35,7 @@ public class OracleStats extends AbstractOracleStats implements DbStats {
 	 * = unlimited"); stmt.execute("alter session set sql_trace = true");
 	 * stmt.execute("alter session set events '10046 trace name context forever,
 	 * level 12'"); setTraceFileIdentifier(connection, fileId);
-	 * 
-	 * @param connection
+	 *
 	 * @param fileId
 	 *            the name of the trace file to use
 	 * @return
