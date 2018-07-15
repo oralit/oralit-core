@@ -19,21 +19,14 @@ import java.util.Scanner;
 
 import javax.sql.DataSource;
 
-import org.javautil.dbstats.oracle.TkprofPipeListener;
-import org.javautil.dbstats.services.oracle.TkprofUtil;
-import org.javautil.dbstats.services.oracle.TkprofUtilLocal;
-import org.javautil.dbstats.services.oracle.TkprofUtilProxy;
-import org.javautil.oracle.HardwiredDataSource;
-import org.javautil.oracle.OracleHelper;
-import org.javautil.oracle.OracleStats;
-import org.javautil.oracle.OracleStatsPkg;
 import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class PipePushTest 
-{
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class PipePushTest  {
 	String listener;
 	String pushText = null;
 	private Logger logger = LoggerFactory.getLogger(getClass());
@@ -44,7 +37,7 @@ public class PipePushTest
 		URI resourceURI = getClass().getResource(resourceName).toURI();
 		logger.debug("resourceUri:" + resourceURI.toString());
 		pushText = new String(Files.readAllBytes(Paths.get(getClass().getResource(resourceName).toURI())));
-		Assert.assertNotNull(pushText);
+		assertThat(pushText).isNotNull();
 		logger.debug("push Text: " + pushText);
 		
 	}

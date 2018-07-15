@@ -8,11 +8,10 @@ import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import org.javautil.instrumentation.DbStats;
-import org.javautil.text.SimpleDateFormatFactory;
+import com.github.oralit.instrumentation.DbStats;
+import com.github.oralit.text.SimpleDateFormatFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 
 
 
@@ -21,7 +20,6 @@ import org.springframework.stereotype.Component;
  * so the user does not have to be granted alter session privileges.	
  *
  */
-@Component
 public class OracleStatsPkg extends AbstractOracleStats implements DbStats {
 
 	private final static Logger log = LoggerFactory.getLogger(OracleStatsPkg.class);
@@ -47,8 +45,7 @@ public class OracleStatsPkg extends AbstractOracleStats implements DbStats {
 	 * = unlimited"); stmt.execute("alter session set sql_trace = true");
 	 * stmt.execute("alter session set events '10046 trace name context forever,
 	 * level 12'"); setTraceFileIdentifier(connection, fileId);
-	 * 
-	 * @param connection
+	 *
 	 * @param fileId
 	 *            the name of the trace file to use
 	 * @return

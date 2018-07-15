@@ -10,16 +10,18 @@ import java.sql.Statement;
 
 import javax.sql.DataSource;
 
+import com.github.oralit.dbstats.oracle.TkprofPipeListener;
 import com.github.oralit.instrumentation.DbStats;
-import org.javautil.dbstats.oracle.TkprofPipeListener;
-import org.javautil.oracle.HardwiredDataSource;
-import org.javautil.oracle.OracleHelper;
-import org.javautil.oracle.OracleStats;
-import org.javautil.oracle.OracleStatsPkg;
+import com.github.oralit.oracle.HardwiredDataSource;
+import com.github.oralit.oracle.OracleHelper;
+import com.github.oralit.oracle.OracleStats;
+import com.github.oralit.oracle.OracleStatsPkg;
 import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class TkprofPipeListenerTest 
 {
@@ -49,7 +51,7 @@ https://docs.oracle.com/database/121/ARPLS/d_pipe.htm#ARPLS67417
 	
 	private void startTkprofService() throws SQLException {
 		Connection conn = dataSource.getConnection();
-		Assert.assertTrue(OracleHelper.isOracleConnection(conn));
+		assertThat(OracleHelper.isOracleConnection(conn)).isTrue();
 		TkprofPipeListener tkProfListener = new TkprofPipeListener(conn);
 		tkProfListener.start();	
 	}
@@ -76,7 +78,7 @@ https://docs.oracle.com/database/121/ARPLS/d_pipe.htm#ARPLS67417
 	public void showTracing() throws SQLException {
 		// TODO figure out how to universally have a method
 		String method = "instrumentation.integrationTest";
-		Assert.assertTrue(method.length() <= 40);
+		assertThat(method.length()).isLessThanOrEqualTo(40);
 		dbstats.traceOn("method");
 		dbstats.setAction("some long queries");
 		
@@ -85,7 +87,7 @@ https://docs.oracle.com/database/121/ARPLS/d_pipe.htm#ARPLS67417
 		String fileName = dbstats.getTraceFileName();
 		// this will only work for dbas with the database on this box
 		File traceFile = new File(fileName);
-		Assert.assertTrue(traceFile.exists());
+		assertThat(traceFile.exists()).isTrue();
 		logger.info("traceFile: " + traceFile);
 	
 		// now nothing more should be written to the file
@@ -108,7 +110,7 @@ https://docs.oracle.com/database/121/ARPLS/d_pipe.htm#ARPLS67417
 		// Now we turn tracing on
 		dbstats.traceOn("2 method ");
 		String fileName2 = dbstats.getTraceFileName();
-		Assert.assertTrue(traceFile.exists());
+		assertThat(traceFile.exists()).isTrue();
 		// now its the same trace file, not surprising 
 		// TODO check if any writing occurs while trace is off 
 		logger.info("traceFile2: " + fileName2);
