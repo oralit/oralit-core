@@ -1,6 +1,6 @@
 # ORALIT
 
-Oralit is a database monitoring tools.
+Oralit is a database instrumentation and monitoring tools, mainly for Oracle (tm). It will give you detailed information on every sql statement, the number of times called, explain plans elapsed time in total and more, this is done by an agent which runs tkprof on your oracle trace files.
 
 ### Install Oracle JDBC
 
