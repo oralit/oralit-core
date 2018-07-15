@@ -1,4 +1,4 @@
-package com.github.oralit.dbstats.services.oracle;
+package org.javautil.oralit.dbstats.services.oracle;
 
 
 
@@ -13,8 +13,8 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
-import com.github.oralit.oracle.OracleHelper;
-import com.github.oralit.text.FileUtil;
+import org.javautil.oralit.oracle.OracleHelper;
+import org.javautil.oralit.text.FileUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

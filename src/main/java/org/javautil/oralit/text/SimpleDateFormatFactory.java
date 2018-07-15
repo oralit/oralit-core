@@ -1,4 +1,4 @@
-package com.github.oralit.text;
+package org.javautil.oralit.text;
 
 import java.text.SimpleDateFormat;
 

@@ -1,4 +1,4 @@
-package com.github.oralit.oracle;
+package org.javautil.oralit.oracle;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -9,7 +9,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.github.oralit.jdbc.ResultSetHelper;
+import org.javautil.oralit.jdbc.ResultSetHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -1,4 +1,4 @@
-package com.github.oralit.instrumentation;
+package org.javautil.oralit.instrumentation;
 
 import java.sql.SQLException;
 

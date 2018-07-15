@@ -1,24 +1,17 @@
-package com.github.oralit;
+package org.javautil.oralit;
 
 import static org.junit.Assert.assertTrue;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 import javax.sql.DataSource;
 
-import com.github.oralit.instrumentation.DbStats;
-import org.javautil.dbstats.oracle.TkprofPipeListener;
-import org.javautil.dbstats.services.oracle.TkprofUtilProxy;
-import org.javautil.oracle.HardwiredDataSource;
-import org.javautil.oracle.OracleHelper;
-import org.javautil.oracle.OracleStats;
-import org.javautil.oracle.OracleStatsPkg;
+import org.javautil.oralit.dbstats.services.oracle.TkprofUtilProxy;
+import org.javautil.oralit.instrumentation.DbStats;
+import org.javautil.oralit.oracle.HardwiredDataSource;
 import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.Logger;

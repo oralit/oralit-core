@@ -1,4 +1,4 @@
-package com.github.oralit;
+package org.javautil.oralit;
 
 import static org.junit.Assert.assertTrue;
 
@@ -10,12 +10,12 @@ import java.sql.Statement;
 
 import javax.sql.DataSource;
 
-import com.github.oralit.dbstats.oracle.TkprofPipeListener;
-import com.github.oralit.instrumentation.DbStats;
-import com.github.oralit.oracle.HardwiredDataSource;
-import com.github.oralit.oracle.OracleHelper;
-import com.github.oralit.oracle.OracleStats;
-import com.github.oralit.oracle.OracleStatsPkg;
+import org.javautil.oralit.dbstats.oracle.TkprofPipeListener;
+import org.javautil.oralit.instrumentation.DbStats;
+import org.javautil.oralit.oracle.*;
+import org.javautil.oralit.oracle.OracleStats;
+import org.javautil.oralit.oracle.OracleStatsPkg;
+import org.javautil.oralit.oracle.HardwiredDataSource;
 import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.Logger;

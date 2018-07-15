@@ -1,10 +1,10 @@
-package com.github.oralit.dbstats.services.oracle;
+package org.javautil.oralit.dbstats.services.oracle;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-import com.github.oralit.text.FileUtil;
+import org.javautil.oralit.text.FileUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

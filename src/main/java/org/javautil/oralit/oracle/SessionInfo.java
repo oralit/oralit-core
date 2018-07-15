@@ -1,4 +1,4 @@
-package com.github.oralit.oracle;
+package org.javautil.oralit.oracle;
 
 public class SessionInfo {
 	private int sid;

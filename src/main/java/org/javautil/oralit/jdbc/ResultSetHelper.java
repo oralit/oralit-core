@@ -1,4 +1,4 @@
-package com.github.oralit.jdbc;
+package org.javautil.oralit.jdbc;
 
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;

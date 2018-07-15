@@ -1,4 +1,4 @@
-package com.github.oralit;
+package org.javautil.oralit;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;

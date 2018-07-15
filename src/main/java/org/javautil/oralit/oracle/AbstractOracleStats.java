@@ -1,4 +1,4 @@
-package com.github.oralit.oracle;
+package org.javautil.oralit.oracle;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 
-import com.github.oralit.text.SimpleDateFormatFactory;
+import org.javautil.oralit.text.SimpleDateFormatFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -1,4 +1,4 @@
-package com.github.oralit.oracle;
+package org.javautil.oralit.oracle;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Date;
 
-import com.github.oralit.instrumentation.DbStats;
+import org.javautil.oralit.instrumentation.DbStats;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
